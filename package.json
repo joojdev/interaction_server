@@ -1,0 +1,17 @@
+{
+  "name": "interaction_server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "joojdev",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
