@@ -2,8 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const Logger = require('./utils/Logger');
 const Session = require('./utils/Session');
+const cors = require('cors');
 
 const expressApp = express();
+expressApp.use(cors({
+    origin: '*'
+}));
 
 expressApp.get('/interaction_server', (request, response) => {
     response.json({ online: true });
