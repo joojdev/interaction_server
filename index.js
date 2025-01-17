@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const Logger = require('./utils/Logger');
-const Session = require('./utils/Session')
+const Session = require('./utils/Session');
 
 const expressApp = express();
 
@@ -29,7 +29,7 @@ expressApp.get('/register_action/:sessionId/:action', async (request, response) 
 
 
     response.json({ success: true });
-})
+});
 
 expressApp.get('/gather_actions/:sessionId', async (request, response) => {
     const sessionId = request.params.sessionId;
@@ -43,7 +43,7 @@ expressApp.get('/gather_actions/:sessionId', async (request, response) => {
     sessions = sessions.filter((session) => session.id != sessionId);
 
     response.json(list);
-})
+});
 
 const port = process.env.PORT || 8080;
 expressApp.listen(port, () => {
