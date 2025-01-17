@@ -5,13 +5,13 @@ const Session = require('./utils/Session');
 
 const expressApp = express();
 
-expressApp.get('/', (request, response) => {
+expressApp.get('/interaction_server', (request, response) => {
     response.json({ online: true });
 });
 
 let sessions = [];
 
-expressApp.get('/register_action/:sessionId/:action', async (request, response) => {
+expressApp.get('/interaction_server/register_action/:sessionId/:action', async (request, response) => {
     const sessionId = request.params.sessionId;
     const action = request.params.action;
 
@@ -31,7 +31,7 @@ expressApp.get('/register_action/:sessionId/:action', async (request, response) 
     response.json({ success: true });
 });
 
-expressApp.get('/gather_actions/:sessionId', async (request, response) => {
+expressApp.get('/interaction_server/gather_actions/:sessionId', async (request, response) => {
     const sessionId = request.params.sessionId;
     
     const sessionIndex = sessions.findIndex((session) => session.id == sessionId);
