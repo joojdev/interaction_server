@@ -1,0 +1,16 @@
+[Unit]
+Description=Interaction Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /opt/interaction_server/index.js
+Restart=on-failure
+Type=simple
+User=nodeuser
+WorkingDirectory=/opt/interaction_server
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=interaction_server
+
+[Install]
+WantedBy=multi-user.target
