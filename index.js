@@ -29,7 +29,7 @@ expressApp.get('/interaction_server/register_action/:sessionId/:action', async (
         newSession = sessions[sessionIndex];
     }
 
-    newSession.registerAction(action);
+    newSession.registerAction(action, 5 * 60); // expires in 5 minutes.
 
 
     response.json({ success: true });
